@@ -1,15 +1,10 @@
-package do_an.do_an_java.Model;
+package do_an.do_an_java.entity;
 
 import do_an.do_an_java.Validator.annotation.ValidUsername;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
-
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 @Data
 @Entity
@@ -37,10 +32,10 @@ public class User {
     @NotBlank(message = "Your name is required!")
     @Size(max = 50, message = "Your name must be less then 50 characters!")
     private String name;
-
-    @ManyToMany
-    @JoinColumn
-    private OrderDetail orderDetail;
+//
+//    @ManyToMany
+//    @JoinColumn
+//    private OrderDetail orderDetail;
 /*
     @ManyToMany
     @JoinTable(name = "user-role",

@@ -1,4 +1,4 @@
-package do_an.do_an_java.Model;
+package do_an.do_an_java.entity;
 
 import do_an.do_an_java.Repository.IUserRepository;
 import org.springframework.security.core.GrantedAuthority;

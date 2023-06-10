@@ -1,6 +1,6 @@
 package do_an.do_an_java.Repository;
 
-import do_an.do_an_java.Model.User;
+import do_an.do_an_java.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

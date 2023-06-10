@@ -1,8 +1,10 @@
-package do_an.do_an_java.Model;
+package do_an.do_an_java.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 @Entity
+@Data
 @Table(name = "contacts")
 public class Contact {
     @Id

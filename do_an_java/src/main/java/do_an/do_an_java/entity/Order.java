@@ -1,11 +1,14 @@
-package do_an.do_an_java.Model;
+package do_an.do_an_java.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 
+
 @Entity
+@Data
 @Table(name = "orders")
 public class Order {
     @Id
@@ -31,9 +34,9 @@ public class Order {
     @Column(name = "total_amount")
     private BigDecimal totalAmount;
 
-    @ManyToMany
-    @JoinColumn
-    private OrderDetail orderDetail;
+//    @OneToMany
+//    @JoinColumn
+//    private OrderDetail orderDetail;
 
     // getters and setters
 }

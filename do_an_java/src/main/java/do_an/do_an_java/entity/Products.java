@@ -1,8 +1,11 @@
-package do_an.do_an_java.Model;
+package do_an.do_an_java.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
+
 import java.math.BigDecimal;
 @Entity
+@Data
 @Table(name = "products")
 public class Products {
     @Id
@@ -29,8 +32,8 @@ public class Products {
     @ManyToOne
     @JoinColumn(name="category_id")
     private ProductCategory category;
-
-    @OneToMany
-    @JoinColumn(name="order_details")
-    private OrderDetail orderdetail;
+//
+//    @OneToMany
+//    @JoinColumn(name="order_details")
+//    private OrderDetail orderdetail;
 }

@@ -1,6 +1,6 @@
 package do_an.do_an_java.Validator;
 
-import do_an.do_an_java.Model.User;
+import do_an.do_an_java.entity.User;
 import do_an.do_an_java.Validator.annotation.ValidUserId;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
