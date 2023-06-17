@@ -5,7 +5,13 @@
     <meta charset="utf-8">
     <title>MultiShop - Online Shop Website Template</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
     <th:block th:replace="_layout :: link-css"> </th:block>
+    <th:block th:replace="_layout :: link-css1"> </th:block>
+    <th:block th:replace="_layout :: link-css2"> </th:block>
+    <th:block th:replace="_layout :: link-fontawesome"> </th:block>
+    <th:block th:replace="_layout :: link-fontfamily"> </th:block>
+    <th:block th:replace="_layout :: link-preconnect"> </th:block>
 <!--    <th:block th:replace="_layout :: link_preconnect"> </th:block>-->
 </head>
 
@@ -26,7 +32,7 @@
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item position-relative active" style="height: 430px;">
-                            <img class="position-absolute w-100 h-100" src="static/img/carousel-1.jpg}"  style="object-fit: cover;">
+                            <img class="position-absolute w-100 h-100" th:src="@{/img/carousel-1.jpg}"  style="object-fit: cover;">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
                                     <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Men Fashion</h1>
@@ -792,6 +798,24 @@
     <!-- Vendor End -->
 
     <th:block th:replace="_layout :: footer"></th:block>
+
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script th:src="@{/lib/easing/easing.min.js}"></script>
+<script th:src="@{/lib/owlcarousel/owl.carousel.min.js}"></script>
+
+<!-- Contact Javascript File -->
+<script th:src="@{/mail/jqBootstrapValidation.min.js}"></script>
+<script th:src="@{/mail/contact.js}"></script>
+
+<!-- Template Javascript -->
+<script th:src="@{/js/main.js}"></script>
 </body>
 
 </html>

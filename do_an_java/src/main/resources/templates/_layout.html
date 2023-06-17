@@ -1,32 +1,28 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+      >
 
 <head>
     <meta charset="utf-8">
     <title>MultiShop - Online Shop Website Template</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
 
-    <!-- Favicon -->
 
-    <link rel="shortcut icon" href="/img/icon.jpg" type="image/x-icon">
 
     <!-- Google Web Fonts -->
     <link th:fragment="link-preconnect" rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link th:fragment="link-fontfamily" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link th:fragment="link-fontawesome" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
 
     <link th:fragment="link-css" rel="stylesheet" th:href="@{/lib/animate/animate.min.css}">
-    <link th:fragment="link-css" rel="stylesheet" th:href="@{/lib/owlcarousel/assets/owl.carousel.min.css}">
+    <link th:fragment="link-css1" rel="stylesheet" th:href="@{/lib/owlcarousel/assets/owl.carousel.min.css}">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link th:fragment="link-css" rel="stylesheet" th:href="@{/css/style.css}">
+    <link th:fragment="link-css2" rel="stylesheet" th:href="@{/css/style.css}">
 
 </head>
 
@@ -48,8 +44,8 @@
                     <div class="btn-group">
                         <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">My Account</button>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button">Sign in</button>
-                            <button class="dropdown-item" type="button">Sign up</button>
+                            <a class="dropdown-item" href="/login">Sign in</a>
+                            <a class="dropdown-item" href="/register">Sign up</a>
                         </div>
                     </div>
                     <div class="btn-group mx-2">
@@ -150,19 +146,17 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <!--<a href="index.html" class="nav-item nav-link active">Home</a>
-                            <a th:href="@{/templates/home/shop.html}" class="nav-item nav-link">Shop</a>
-                            <a th:href="@{/templates/home/detail.html}" class="nav-item nav-link">Shop Detail</a>
-                            --><div class="nav-item dropdown">
+                            <a href="/" class="nav-item nav-link active">Home</a>
+                            <a href="/shop/shop" class="nav-item nav-link">Shop</a>
+                            <a href="/detail" class="nav-item nav-link">Shop Detail</a>
+                            <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down mt-1"></i></a>
-                            <!--                            <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
-                                                            <a th:href="@{/templates/home/cart.html}" class="dropdown-item">Shopping Cart</a>
-                                                            <a th:href="@{/templates/home/checkout.html}" class="dropdown-item">Checkout</a>
-                                                        </div>-->
+                                                        <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
+                                                            <a href="/cart" class="dropdown-item">Shopping Cart</a>
+                                                            <a href="/checkout" class="dropdown-item">Checkout</a>
+                                                        </div>
                         </div>
-                            <!--
-                                                    <a th:href="@{/templates/home/contact.html}" class="nav-item nav-link">Contact</a>
-                            -->
+                                                    <a href="/contact" class="nav-item nav-link">Contact</a>
                         </div>
                         <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
                             <a href="" class="btn px-0">
@@ -252,7 +246,7 @@
                 </p>
             </div>
             <div class="col-md-6 px-xl-0 text-center text-md-right">
-                <img class="img-fluid" th:src="@{/img/payments.png}" alt="">
+                <img class="img-fluid" src="@{/img/payments.png}" alt="">
             </div>
         </div>
     </div>

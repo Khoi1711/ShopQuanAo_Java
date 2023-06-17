@@ -37,17 +37,21 @@ public class SecurityConfig {
         auth.setPasswordEncoder(passwordEncoder());
         return auth;
     }
-
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
         return http
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/css/**", "/js/**", "/", "/register", "/error").permitAll()
-/*                        .requestMatchers("/books/edit", "/books/delete").permitAll()
-                        .requestMatchers("/books", "/books/add").permitAll()*/
-                        .requestMatchers("/login", "/register").permitAll().anyRequest().authenticated())
-                .formLogin(formLogin -> formLogin.loginPage("/login").loginProcessingUrl("/login").defaultSuccessUrl("/").permitAll())
-                .rememberMe(rememberMe -> rememberMe.key("uniqueAndSecret").tokenValiditySeconds(86400)
-                        .userDetailsService(userDetailsService())).exceptionHandling(exceptionHandling -> exceptionHandling.accessDeniedPage("/404")).build();
+                        .requestMatchers("/login", "/register").permitAll()
+                        .anyRequest().authenticated())
+
+                .formLogin(formLogin -> formLogin
+                        .loginPage("/login").loginProcessingUrl("/login")
+                        .defaultSuccessUrl("/").permitAll())
+                .rememberMe(rememberMe -> rememberMe
+                        .key("uniqueAndSecret").tokenValiditySeconds(86400)
+                        .userDetailsService(userDetailsService()))
+                .exceptionHandling(exceptionHandling -> exceptionHandling
+                        .accessDeniedPage("/404")).build();
     }
 }

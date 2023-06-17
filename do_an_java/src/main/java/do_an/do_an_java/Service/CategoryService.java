@@ -3,10 +3,12 @@ package do_an.do_an_java.Service;
 import do_an.do_an_java.entity.ProductCategory;
 import do_an.do_an_java.Repository.ICategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class CategoryService {
     @Autowired
     private ICategoryRepository categoryRepository;

@@ -7,6 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign Up</title>
   <th:block th:replace="_layout :: link-css"> </th:block>
+  <th:block th:replace="_layout :: link-css1"> </th:block>
+  <th:block th:replace="_layout :: link-css2"> </th:block>
+  <th:block th:replace="_layout :: link-fontawesome"> </th:block>
+  <th:block th:replace="_layout :: link-fontfamily"> </th:block>
+  <th:block th:replace="_layout :: link-preconnect"> </th:block>
 </head>
 <body>
 <th:block th:replace="~{_layout :: header}"></th:block>
@@ -30,18 +35,36 @@
           <input type="text" class="form-control" id="username" th:field="*{username}">
           <span class="text-danger" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></span>
         </div>
-        <div class="b-3">
+        <div class="mb-3">
           <label for="password" class="form-label">Password: </label><span class="text-danger"></span>
           <input type="password" class="form-control" th:field="*{password}" id="password">
           <span class="text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
         </div>
         <div class="d-grid gap-2">
-          <button type="submit" class="btn btn-info">Sign up</button>
+          <button type="submit" class="btn btn-primary float-right">Sign up</button>
+          <a class="text-primary text-center float-right" href="/login">Have an account? Sign in here.</a>
         </div>
       </form>
     </div>
   </div>
 </div>
 <th:block th:replace="~{_layout :: footer}"></th:block>
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script th:src="@{/lib/easing/easing.min.js}"></script>
+<script th:src="@{/lib/owlcarousel/owl.carousel.min.js}"></script>
+
+<!-- Contact Javascript File -->
+<script th:src="@{/mail/jqBootstrapValidation.min.js}"></script>
+<script th:src="@{/mail/contact.js}"></script>
+
+<!-- Template Javascript -->
+<script th:src="@{/js/main.js}"></script>
 </body>
 </html>
