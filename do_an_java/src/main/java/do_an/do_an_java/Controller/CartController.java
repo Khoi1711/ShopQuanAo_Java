@@ -25,6 +25,10 @@ public class CartController {
         model.addAttribute("total_amount",cartService.getAmount());
         return "cart/cart";
     }
+    @GetMapping("/checkout")
+    public String checkout(Model model){
+        return "cart/checkout";
+    }
 /*
     @GetMapping("add/{id}")
     public String addItem(@PathVariable("id") Integer id){
