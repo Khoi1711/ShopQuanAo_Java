@@ -16,7 +16,12 @@ public class ProductController {
     @GetMapping("/shop")
     public String viewHomePage(Model model){
         /*model.addAttribute("listProduct", productService.getAllProducts());*/
-        return("shop");
+        return("home/shop");
+    }
+    @GetMapping("/detail")
+    public String detail(Model model){
+        /*model.addAttribute("listProduct", productService.getAllProducts());*/
+        return("home/detail");
     }
 /*
     @GetMapping("/createProduct")

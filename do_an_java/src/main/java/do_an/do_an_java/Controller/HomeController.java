@@ -20,4 +20,8 @@ public class HomeController {
     public String home(){
         return "home/index";
     }
+    @GetMapping("/contact")
+    public String contact(){
+        return "home/contact";
+    }
 }
