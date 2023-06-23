@@ -3,11 +3,10 @@ package do_an.do_an_java.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.math.BigDecimal;
 @Entity
 @Data
 @Table(name = "products")
-public class Products {
+public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "product_id")
@@ -26,7 +25,7 @@ public class Products {
     private int quantity;
 
     @Column(name = "price")
-    private BigDecimal price;
+    private long price;
 
     // getters and setters
     @ManyToOne

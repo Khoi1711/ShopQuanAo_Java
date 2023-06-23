@@ -2,16 +2,59 @@ package do_an.do_an_java.Service;
 
 import do_an.do_an_java.entity.Cart;
 
-import java.util.Collection;
+import do_an.do_an_java.entity.Product;
+import org.springframework.stereotype.Service;
+import org.springframework.web.context.annotation.SessionScope;
 
-public interface CartService {
-    void add(Cart newItem);
+import java.util.ArrayList;
+import java.util.List;
 
-    void remove(int id);
-    Cart update(int productId, int quantity);
-    void clear();
-    double getAmount();
+@Service
+@SessionScope
+public class CartService {
+    private List<Cart> cartItems = new ArrayList<>();
 
-    int getCount();
-    Collection<Cart> getAllItems();
+    public List<Cart> getCartItems() {
+        return cartItems;
+    }
+
+    public void clearCart() {
+        cartItems.clear();
+    }
+
+    public void addToCart(Product product) {
+        Cart findCart = cartItems.stream()
+                .filter(item -> item.getId().equals(product.getProductId()))
+                .findFirst().orElse(null);
+        if(findCart != null)
+        {
+            findCart.setQuantity(findCart.getQuantity()+1);
+        }
+        else
+        {
+            System.out.print("case item = null");
+            findCart = new Cart();
+            findCart.setQuantity(1);
+
+            findCart.setId(product.getProductId());
+            findCart.setName(product.getName());
+            findCart.setImageUrl(product.getImageUrl());
+            findCart.setPrice(product.getPrice());
+
+            cartItems.add(findCart);
+        }
+    }
+    public void updateCartItem(Integer productId, int quantity) {
+        Cart findCart = cartItems.stream()
+                .filter(item -> item.getId().equals(productId))
+                .findFirst().orElse(null);
+        if(findCart != null)
+        {
+            findCart.setQuantity(quantity);
+        }
+    }
+    public void removeFromCart(Integer productId) {
+        cartItems.removeIf(cartItem -> cartItem.getId().equals(productId));
+    }
 }
+
